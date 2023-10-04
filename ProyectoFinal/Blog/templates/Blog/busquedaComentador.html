@@ -1,0 +1,60 @@
+{% extends "Blog/main.html" %} {% load static %} {% block pageName %} Buscar Un Comentador
+{% endblock pageName %} {% block dynamic_content %}
+
+<section class="page-section" id="contact">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">BUSCA UN COMENTADOR</h2>
+      <h3 class="section-subheading text-muted"></h3>
+    </div>
+    <!-- * * * * * * * * * * * * * * *-->
+    <!-- * * SB Forms Contact Form * *-->
+    <!-- * * * * * * * * * * * * * * *-->
+    <!-- This form is pre-integrated with SB Forms.-->
+    <!-- To make this form functional, sign up at-->
+    <!-- https://startbootstrap.com/solution/contact-forms-->
+    <!-- to get an API token!-->
+
+    <form
+      id="contactForm"
+      data-sb-form-api-token="API_TOKEN"
+      action=""
+      method="POST"
+      
+    >
+      {% csrf_token %}
+  
+        <div class="row  mb-5 text-center " style="justify-content:center">
+          <div class="col-md-6 text-center">
+            <div class="form-group text-center">
+              <!-- Name input-->
+              <input
+                class="form-control"
+                id="name"
+                type="text"
+                placeholder="Nombre"
+                data-sb-validations="required"
+                name="nombre"
+              />
+              <div class="invalid-feedback" data-sb-feedback="name:required">
+                Ingrese un nombre válido
+              </div>
+            </div>
+            
+            
+        </div>
+        </div>
+        <!-- Submit Button-->
+        <div class="text-center">
+          <input
+            class="btn btn-primary btn-xl text-uppercase"
+            type="submit"
+            value="Buscar Comentador"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+{% endblock dynamic_content %}
