@@ -1,27 +1,38 @@
-from django.contrib import admin
 from django.urls import path
 from Blog.views import (
     inicio,
-    redactores,
-    noticias,
     about,
-    formularioRedactor,
-    formularioComentador,
-    formularioModerador,
-    busquedaRedactor,
-    busquedaComentador,
-    busquedaModerador,
+)
+from django.views.generic.base import TemplateView
+
+
+from Blog.class_views import (
+    BlogListView,
+    BlogCreateView,
+    BlogDetailView,
+    BlogDeleteView,
+    BlogUpdateView,
 )
 
+
 urlpatterns = [
-    path("", inicio, name="Inicio"),
-    path("noticias/", noticias, name="Noticias"),
-    path("redactores/", redactores, name="Redactores"),
-    path("acerca-de/", about, name="Acerca De"),
-    path("formulario-redactor", formularioRedactor, name="FormularioRedactor"),
-    path("formulario-comentador", formularioComentador, name="FormularioComentador"),
-    path("formulario-moderador", formularioModerador, name="FormularioModerador"),
-    path("buscar-redactor/", busquedaRedactor, name="Busqueda Redactor"),
-    path("buscar-comentador/", busquedaComentador, name="Busqueda Redactor"),
-    path("buscar-moderador/", busquedaModerador, name="Busqueda Redactor"),
+    path("", TemplateView.as_view(template_name="Blog/index.html"), name="Inicio"),
+    path("pages/", BlogListView.as_view(), name="Pages"),
+    path("about/", about, name="Acerca De"),
+    path(
+        "new-blog/",
+        BlogCreateView.as_view(),
+        name="Nuevo Blog",
+    ),
+    path("blog-detail/<int:pk>/", BlogDetailView.as_view(), name="Blog Detail"),
+    path(
+        "blog-delete/<int:pk>/",
+        BlogDeleteView.as_view(),
+        name="Blog Delete",
+    ),
+    path(
+        "blog-update/<int:pk>/",
+        BlogUpdateView.as_view(),
+        name="Blog Update",
+    ),
 ]

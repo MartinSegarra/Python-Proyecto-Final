@@ -1,10 +1,6 @@
 from django.contrib import admin
-from Blog.models import Redactor, Moderador, Comentador
+from Blog.models import Blog
 
 # Register your models here.
 
-admin.site.register(Redactor)
-
-admin.site.register(Comentador)
-
-admin.site.register(Moderador)
+admin.site.register(Blog)
