@@ -2,7 +2,7 @@
 
 ## Resumen
 
-El proyecto tiene una app que representa un Blog, con distintas páginas que heredan HTML de un template principal. Además de la página de Blogs, Iniciar Sesión y Crear Cuenta, el sitio tiene una página de Acerca De que muestra información del creador del proyecto.
+El proyecto tiene una app que representa un Blog, con distintas páginas que heredan HTML de un template principal, y una app para el manejo de las cuentas de usuario. Además de la página de Blogs, Iniciar Sesión y Crear Cuenta, el sitio tiene una página de Acerca De que muestra información del creador del proyecto.
 
 ## Modelos
 
